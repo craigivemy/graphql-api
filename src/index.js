@@ -4,7 +4,10 @@ import {Schema} from "./schema";
 const query = `
   {
     posts {
-      title
+      title,
+      author {
+        name
+      }
     }
   }
 `;
