@@ -1,2 +1,13 @@
 import {graphql} from "graphql";
-console.log('hi');
+import {Schema} from "./schema";
+
+const query = `
+  {
+    posts {
+      title
+    }
+  }
+`;
+graphql(Schema, query).then(result => {
+  console.log(JSON.stringify(result, null, 2));
+}).catch(err => console.log(err));

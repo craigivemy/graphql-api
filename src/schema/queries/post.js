@@ -10,6 +10,6 @@ export default {
     args: {
       id: { type: new GraphQLNonNull(GraphQLInt) }
     },
-    resolve: (parent, {id}) => FakeDB.getBlogPost(id)
+    resolve: (parent, {id}) => FakeDB.getBlogPost(id) 
   }
 }

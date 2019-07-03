@@ -1,4 +1,4 @@
-export class FakeDB {
+class FakeDatabase {
   constructor() {
     this.authors = [
       { id: 1, name: 'Craig Ivemy', email: 'craig@gmail.com' },
@@ -56,4 +56,16 @@ export class FakeDB {
         return post.author === authorId
       })
   }
+
+  addBlogPost(blogPost) {
+    blogPost.id = this.blogPosts.length + 1;
+    this.blogPosts.push(blogPost);
+    return blogPost;
+  }
+  addComment(comment) {
+    comment.id = this.comments.length + 1;
+    this.comments.push(comment);
+    return comment;
+  }
 }
+export const FakeDB = new FakeDatabase();
